@@ -11,10 +11,9 @@ clients = set()
 # 加入 CORS 中介軟體，讓跨網域請求可以通過
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://comfy-puffpuff-2afc75.netlify.app/",
-        # 以後有自訂網域，這邊再加
-    ],
+   allow_origins=[
+    "https://comfy-puffpuff-2afc75.netlify.app",
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
