@@ -22,6 +22,7 @@ app.add_middleware(
 # 提供外部送訂單（POST）
 @app.post("/order")
 async def post_order(order: dict):
+    print("收到新訂單：", order)
     orders.append(order)
     # 新單推播給所有 WebSocket 連線
     for ws in clients.copy():
@@ -31,9 +32,9 @@ async def post_order(order: dict):
             clients.discard(ws)
     return {"ok": True}
 
-# 提供所有訂單查詢（GET）
 @app.get("/orders")
 async def get_orders():
+    print("查詢訂單，現有：", orders)
     return orders
 
 # WebSocket 連線（讓 app 實時接收新訂單）
