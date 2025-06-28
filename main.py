@@ -12,7 +12,7 @@ clients = set()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://comfy-puffpuff-2afc75.netlify.app",
+        "https://comfy-puffpuff-2afc75.netlify.app/",
         # 以後有自訂網域，這邊再加
     ],
     allow_credentials=True,
